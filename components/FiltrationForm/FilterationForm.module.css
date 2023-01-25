@@ -1,0 +1,60 @@
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main form {
+  width: 95%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main form > div {
+  width: calc(100% / 6 - 50px);
+}
+
+.main label,
+.main input {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.main input,
+.main select {
+  height: 40px;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding-left: 20px;
+  box-shadow: 3px 3px 5px silver;
+}
+.select {
+  margin-top: -10px;
+}
+
+.not-valid {
+  background-color: salmon;
+}
+
+.btn {
+  width: 100%;
+  background-color: #3f3ffe;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  height: 40px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px silver;
+}
+.btn:hover {
+  background-color: #0a0a93;
+}
+.btn:active {
+  background-color: #1c72dc;
+  font-size: 1.3rem;
+}
