@@ -7,6 +7,7 @@ import TableRow from "./TableRow";
 import Button from "../UI/Button/Button";
 import upImage from "../../assets/icons/top.jpg";
 import downImage from "../../assets/icons/down.png";
+import TableHeadElement from "./TableHeadElement";
 
 import classes from "./Table.module.css";
 
@@ -44,66 +45,46 @@ const Table = ({ pageNumber, mainArray }) => {
         <table className={classes.table}>
           <thead>
             <tr>
-              <th>
-                Log ID
-                <Button onClick={sortHanlder} sort={true}>
-                  {!isSorting ? (
-                    <Image src={upImage} alt="up" />
-                  ) : (
-                    <Image src={downImage} alt="down" />
-                  )}
-                </Button>
-              </th>
-              <th>
-                application Type
-                <Button onClick={sortHanlder} sort={true}>
-                  {!isSorting ? (
-                    <Image src={upImage} alt="up" />
-                  ) : (
-                    <Image src={downImage} alt="down" />
-                  )}
-                </Button>
-              </th>
-              <th>
-                application Id
-                <Button onClick={sortHanlder} sort={true}>
-                  {!isSorting ? (
-                    <Image src={upImage} alt="up" />
-                  ) : (
-                    <Image src={downImage} alt="down" />
-                  )}
-                </Button>
-              </th>
-              <th>
-                action Type
-                <Button onClick={sortHanlder} sort={true}>
-                  {!isSorting ? (
-                    <Image src={upImage} alt="up" />
-                  ) : (
-                    <Image src={downImage} alt="down" />
-                  )}
-                </Button>
-              </th>
-              <th>
-                action Details
-                <Button onClick={sortHanlder} sort={true}>
-                  {!isSorting ? (
-                    <Image src={upImage} alt="up" />
-                  ) : (
-                    <Image src={downImage} alt="down" />
-                  )}
-                </Button>
-              </th>
-              <th>
-                Date:Time
-                <Button onClick={sortHanlder} sort={true}>
-                  {!isSorting ? (
-                    <Image src={upImage} alt="up" />
-                  ) : (
-                    <Image src={downImage} alt="down" />
-                  )}
-                </Button>
-              </th>
+              <TableHeadElement
+                name="Log ID"
+                images={[upImage, downImage]}
+                onClick={sortHanlder}
+                isSorting={isSorting}
+              />
+
+              <TableHeadElement
+                name="Application Type"
+                images={[upImage, downImage]}
+                onClick={sortHanlder}
+                isSorting={isSorting}
+              />
+
+              <TableHeadElement
+                name="Application ID"
+                images={[upImage, downImage]}
+                onClick={sortHanlder}
+                isSorting={isSorting}
+              />
+
+              <TableHeadElement
+                name="Action Type"
+                images={[upImage, downImage]}
+                onClick={sortHanlder}
+                isSorting={isSorting}
+              />
+              <TableHeadElement
+                name="Action Details"
+                images={[upImage, downImage]}
+                onClick={sortHanlder}
+                isSorting={isSorting}
+              />
+
+              <TableHeadElement
+                name="Date:Time"
+                images={[upImage, downImage]}
+                onClick={sortHanlder}
+                isSorting={isSorting}
+              />
             </tr>
           </thead>
           <tbody>
