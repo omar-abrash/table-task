@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
@@ -117,4 +117,4 @@ const Table = ({ pageNumber, mainArray }) => {
   );
 };
 
-export default Table;
+export default React.memo(Table);

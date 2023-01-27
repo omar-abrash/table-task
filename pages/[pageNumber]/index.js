@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { useRouter } from "next/router";
 
 import FiltrationForm from "@/components/FiltrationForm/FiltrationForm";
@@ -9,18 +9,28 @@ import { getData, NumberOfPages, filterationDataFun } from "@/utility/utility";
 const mainURL = "https://run.mocky.io/v3/a2fbc23e-069e-4ba5-954c-cd910986f40f";
 
 const PageNumber = (props) => {
-  const [mainArray, setMainArray] = useState(props.mainArray);
-  const numberOfPages = NumberOfPages(mainArray.length);
+  // add useMemo to fix mainArray if not change
+  const [mainArray, setMainArray] = useState(
+    useMemo(() => {
+      return props.mainArray;
+    }, [props.mainArray])
+  );
+  // add useCallback to fix NumberOfPages Fun
+  const numberOfPages = useCallback(NumberOfPages(mainArray.length), [
+    mainArray.length,
+  ]);
+
   const pageNumber = Number(props.pageNumber.replace("page", ""));
   const router = useRouter();
   //
-  const filterationHandler = (filterationData) => {
+  // add useCallback here to fix the filteration func
+  const filterationHandler = useCallback((filterationData) => {
     router.push("/page1");
     // go to the filteration function
     setMainArray((prevState) =>
       filterationDataFun(props.mainArray, filterationData)
     );
-  };
+  }, []);
   //
   return (
     <div>
@@ -37,7 +47,7 @@ export default PageNumber;
 export const getStaticProps = async (context) => {
   // prepare all data from api
   const data = await getData(mainURL);
-  const mainArray = data.result.auditLog;
+  const mainArray = await data.result.auditLog; // refixing this line (add await)
   // prepare dynamic Page number [pageNumber]
   const pageNumber = context.params.pageNumber;
 

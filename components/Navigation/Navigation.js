@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from "react";
 import { useState, useEffect } from "react";
 
 import Item from "./Item";
@@ -6,7 +6,7 @@ import classes from "./Navigation.module.css";
 
 const Navigation = ({ numperOfPages, pageNumber }) => {
   const [navArray, setNavArray] = useState([]);
-
+  // console.log("navigation!"); // this console to test memo
   // helper function
   const listArrayHandler = () => {
     let listArray = [];
@@ -34,4 +34,4 @@ const Navigation = ({ numperOfPages, pageNumber }) => {
   );
 };
 
-export default Navigation;
+export default React.memo(Navigation);

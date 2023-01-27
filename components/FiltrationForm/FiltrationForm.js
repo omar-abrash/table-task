@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from "react";
 import { useState } from "react";
 import Button from "../UI/Button/Button";
 import InputElement from "../UI/InputElement/InputElement";
@@ -129,4 +129,4 @@ const FiltrationForm = ({ afterSubmit, allData }) => {
   );
 };
 
-export default FiltrationForm;
+export default React.memo(FiltrationForm);
