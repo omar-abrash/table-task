@@ -24,3 +24,8 @@
   border-bottom: 1px solid #9c9cff;
   height: 50px;
 }
+.table tbody tr:hover {
+  background-color: aquamarine;
+  font-weight: bold;
+  cursor: pointer;
+}
