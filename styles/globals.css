@@ -3,9 +3,19 @@ body {
   font-family: "Courier New", Courier, monospace;
 }
 
+h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  text-shadow: 3px 3px 3px #00ffee;
+}
+
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
+
 a {
   text-decoration: none;
 }
